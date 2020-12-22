@@ -38,5 +38,9 @@ namespace TableTime.Product
         public double Fats { get; set; }
         public double Carb { get; set; }
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

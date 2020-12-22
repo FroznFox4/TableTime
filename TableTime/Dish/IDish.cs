@@ -7,10 +7,12 @@ using TableTime.Product;
 
 namespace TableTime.Dish
 {
-    public interface IDish<T>
+    public interface IDish<T>: ICloneable
     {
         string Name { get; set; }
-        List<ICustomProduct<T>> Products { get; set; }
+        List<IProduct> Products { get; set; }
         IProduct ConvertToProduct();
+        string DishName();
+        object Clone();
     }
 }

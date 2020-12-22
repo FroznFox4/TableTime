@@ -11,18 +11,18 @@ namespace TableTime.Rules
     public class DefaultRules : IRulesWithCustomAdditionals
     {
 
-        public IProduct Сonsumption { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IProduct Сonsumption { get; set; }
 
         public DefaultRules()
         {
             Сonsumption = new DefaultProduct
             {
                 Name = "Сonsumption",
-                Carb = 1000,
-                Fats = 1000,
+                Carb = 0,
+                Fats = 0,
                 Kkal = 1000,
-                Mass = 1000,
-                Protein = 1000
+                Mass = 0,
+                Protein = 0
             };
         }
 

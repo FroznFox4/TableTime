@@ -9,7 +9,7 @@ using TableTime.Rules;
 
 namespace TableTime.Day
 {
-    public class CustomDay : IDay<double>
+    public class DefaultDay : IDay<double>
     {
         private int countDay = 0;
         public int CountDay 
@@ -39,7 +39,7 @@ namespace TableTime.Day
                 Сonsumption = rules.Сonsumption;
             }
         }
-        public List<IDish<double>> Products { get; set; } = new List<IDish<double>>();
+        public List<IDish<double>> Dishes { get; set; } = new List<IDish<double>>();
 
         private IProduct consumption;
         public IProduct Сonsumption
@@ -54,14 +54,19 @@ namespace TableTime.Day
             }
         }
 
-        public CustomDay()
+        public DefaultDay()
         {
             Rules = new DefaultRules();
         }
-        public CustomDay(IRulesWithCustomAdditionals rules)
+        public DefaultDay(IRulesWithCustomAdditionals rules)
         {
             Rules = rules;
 
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

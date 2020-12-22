@@ -1,0 +1,13 @@
+C:\VisualProjects\TableTime\TableTime\bin\Debug\TableTime.exe.config
+C:\VisualProjects\TableTime\TableTime\bin\Debug\TableTime.exe
+C:\VisualProjects\TableTime\TableTime\bin\Debug\TableTime.pdb
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.csprojAssemblyReference.cache
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.Form1.resources
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.Properties.Resources.resources
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.csproj.GenerateResource.cache
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.csproj.CoreCompileInputs.cache
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.exe
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.pdb
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.DayForm.resources
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.DishForm.resources
+C:\VisualProjects\TableTime\TableTime\obj\Debug\TableTime.WeekForm.resources

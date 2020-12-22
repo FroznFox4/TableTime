@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TableTime.Product
 {
-    public interface IProduct
+    public interface IProduct: ICloneable
     {
         string Name { get; set; }
         double Mass { get; set; }
@@ -14,5 +14,6 @@ namespace TableTime.Product
         double Protein { get; set; }
         double Fats { get; set; }
         double Carb { get; set; }
+        object Clone();
     }
 }

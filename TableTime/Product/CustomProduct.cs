@@ -17,8 +17,7 @@ namespace TableTime.Product
             double kkal, 
             double protein, 
             double fats, 
-            double carb, 
-            IRulesWithCustomAdditionals rules)
+            double carb)
         {
             Name = name;
             Mass = mass;
@@ -26,6 +25,14 @@ namespace TableTime.Product
             Protein = protein;
             Fats = fats;
             Carb = carb;
+        }
+        public CustomProduct(IProduct product, IRulesWithCustomAdditionals rules) : this(product.Name, product.Mass, product.Kkal, product.Protein, product.Fats, product.Carb) 
+        {
+            Rules = rules;
+        }
+
+        public CustomProduct(IRulesWithCustomAdditionals rules)
+        {
             Rules = rules;
         }
 
@@ -38,5 +45,10 @@ namespace TableTime.Product
         public IRulesWithCustomAdditionals Rules { get; set; } = new DefaultRules();
 
         public double Coef() => Rules.Coef(Mass, Kkal, Protein, Fats, Carb);
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }
