@@ -147,7 +147,7 @@ namespace TableTime
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "WeekForm";
-            this.Text = "Window2";
+            this.Text = "Недельный рацион";
             this.ResumeLayout(false);
 
         }

@@ -108,7 +108,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "DayForm";
-            this.Text = "DayForm";
+            this.Text = "Дневной рацион";
             this.ResumeLayout(false);
 
         }

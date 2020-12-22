@@ -14,8 +14,8 @@ namespace TableTime.Generator
 {
     public class DefaultGenerator : DefaultAbsGenerator<double>
     {
-        private DefaultAbsDb db = new DefaultDB();
-        private void SetDb(DefaultAbsDb value)
+        private AbsDb db = new DefaultDB();
+        private void SetDb(AbsDb value)
         {
             value.FillDb();
         }
@@ -26,7 +26,7 @@ namespace TableTime.Generator
         private IDay<double> Day { get; set; } = new DefaultDay();
         private IWeek<double> Week { get; set; } = new DefaultWeek();
         public DefaultGenerator() { }
-        public DefaultGenerator(DefaultAbsDb db)
+        public DefaultGenerator(AbsDb db)
         {
             SetDb(db);
         }
@@ -34,7 +34,7 @@ namespace TableTime.Generator
         {
             Rules = rules;
         }
-        public DefaultGenerator(DefaultAbsDb db, IRules rules)
+        public DefaultGenerator(AbsDb db, IRules rules)
         {
             SetDb(db);
             Rules = rules;
@@ -43,7 +43,7 @@ namespace TableTime.Generator
         {
             this.product = product;
         }
-        public DefaultGenerator(DefaultAbsDb db, IRules rules, Random random, IProduct product) : this(db, rules)
+        public DefaultGenerator(AbsDb db, IRules rules, Random random, IProduct product) : this(db, rules)
         {
             this.random = random;
             this.product = product;
@@ -80,8 +80,10 @@ namespace TableTime.Generator
             int countProducts = 0;
             if (maxValueOfProducts > 7)
                 countProducts = random.Next(5, 7);
-            else
+            else if (maxValueOfProducts > 5)
                 countProducts = random.Next(5, maxValueOfProducts);
+            else 
+                throw new Exception("Insufficient data in the database");
             IDish<double> finalDish = Dish;
             finalDish = ClearDish(finalDish);
             for(var i = 0; i < countProducts; i++)
