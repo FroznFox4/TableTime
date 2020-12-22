@@ -11,7 +11,6 @@ namespace TableTime.Dish
     {
         string Name { get; set; }
         List<IProduct> Products { get; set; }
-        IProduct ConvertToProduct();
         string DishName();
         object Clone();
     }

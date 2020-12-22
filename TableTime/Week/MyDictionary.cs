@@ -47,7 +47,7 @@ namespace TableTime.Week
             }
             else 
             {
-                throw new OverflowException("There should be no more than 6 elements in a dict");
+                throw new OverflowException("There should be no more than 7 elements in a dict");
             }
         }
         public virtual bool ContainsKey(TKey key)

@@ -83,7 +83,6 @@
     <Compile Include="Product\DefaultProduct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rules\IRulesWithCustomAdditionals.cs" />
     <Compile Include="Week\DefaultWeek.cs" />
     <Compile Include="Week\IWeek.cs" />
     <Compile Include="Week\MyDictionary.cs" />

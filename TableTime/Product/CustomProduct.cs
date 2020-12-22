@@ -7,7 +7,7 @@ using TableTime.Rules;
 
 namespace TableTime.Product
 {
-    public class CustomProduct : ICustomProduct<double>
+    public class CustomProduct : ICustomProduct
     {
         public CustomProduct() { }
 
@@ -26,12 +26,12 @@ namespace TableTime.Product
             Fats = fats;
             Carb = carb;
         }
-        public CustomProduct(IProduct product, IRulesWithCustomAdditionals rules) : this(product.Name, product.Mass, product.Kkal, product.Protein, product.Fats, product.Carb) 
+        public CustomProduct(IProduct product, IRules rules) : this(product.Name, product.Mass, product.Kkal, product.Protein, product.Fats, product.Carb) 
         {
             Rules = rules;
         }
 
-        public CustomProduct(IRulesWithCustomAdditionals rules)
+        public CustomProduct(IRules rules)
         {
             Rules = rules;
         }
@@ -42,9 +42,7 @@ namespace TableTime.Product
         public double Protein { get; set; } = 0.0;
         public double Fats { get; set; } = 0.0;
         public double Carb { get; set; } = 0.0;
-        public IRulesWithCustomAdditionals Rules { get; set; } = new DefaultRules();
-
-        public double Coef() => Rules.Coef(Mass, Kkal, Protein, Fats, Carb);
+        public IRules Rules { get; set; } = new DefaultRules();
 
         public object Clone()
         {

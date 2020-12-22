@@ -35,21 +35,6 @@ namespace TableTime.Dish
         public List<IProduct> Products { get; set; } = new List<IProduct>();
         public string Name { get; set; } = "";
 
-        public IProduct ConvertToProduct()
-        {
-            IProduct dish = new DefaultProduct();
-            foreach(var el in Products)
-            {
-                dish.Carb += el.Carb;
-                dish.Fats += el.Fats;
-                dish.Kkal += el.Kkal;
-                dish.Mass += el.Mass;
-                dish.Protein += el.Protein;
-                dish.Name = Name;
-            }
-            return dish;
-        }
-
         public string DishName()
         {
             string dishName = "";

@@ -8,7 +8,7 @@ using TableTime.Rules;
 
 namespace TableTime.Rules
 {
-    public class DefaultRules : IRulesWithCustomAdditionals
+    public class DefaultRules : IRules
     {
 
         public IProduct Сonsumption { get; set; }
@@ -24,26 +24,6 @@ namespace TableTime.Rules
                 Mass = 0,
                 Protein = 0
             };
-        }
-
-
-        public double Coef<T>(params T[] coef)
-        {
-            try 
-            {
-                var tempList = new List<double>();
-                foreach (var el in coef)
-                    tempList.Add(Convert.ToDouble(coef));
-                return tempList.Average();
-            }
-            catch
-            {
-                Console.WriteLine(string.Format("WARNIN: Type for this rules is invalid"));
-                var tempList = new List<int>();
-                foreach (var el in coef)
-                    tempList.Add(el.ToString().GetHashCode());
-                return tempList.Average();
-            }
         }
     }
 }

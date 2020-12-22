@@ -7,9 +7,8 @@ using TableTime.Rules;
 
 namespace TableTime.Product
 {
-    public interface ICustomProduct<T>: IProduct
+    public interface ICustomProduct: IProduct
     {
-        IRulesWithCustomAdditionals Rules { get; set; }
-        T Coef();
+        IRules Rules { get; set; }
     }
 }

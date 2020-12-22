@@ -9,11 +9,9 @@ using TableTime.Rules;
 
 namespace TableTime.Day
 {
-    public interface IDay<T>: IRules, ICloneable
+    public interface IDay<T>: ICloneable
     {
-        IRulesWithCustomAdditionals Rules { get; set; }
         List<IDish<T>> Dishes { get; set; }
-        int CountDay { get; set; }
 
         object Clone();
     }

@@ -7,7 +7,7 @@ using TableTime.Product;
 
 namespace TableTime.DB
 {
-    public abstract class AbsDb<T>: IDB<string, IProduct, T>
+    public abstract class AbsDb : IDB<string, IProduct, DefaultDB>
     {
         protected abstract Dictionary<string, IProduct> Db { get; set; }
 
@@ -17,10 +17,12 @@ namespace TableTime.DB
 
         abstract public IProduct[] GetAll();
 
-        abstract public T Set(string key, IProduct value);
+        abstract public DefaultDB Set(string key, IProduct value);
 
-        abstract public T Update(string key, IProduct newValue);
+        abstract public DefaultDB Update(string key, IProduct newValue);
 
         abstract public IProduct GetForNumber(int number);
+
+        public abstract int CountKeys();
     }
 }

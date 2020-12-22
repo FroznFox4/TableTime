@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace TableTime.DB
 {
-    abstract public class DefaultAbsDb: AbsDb<DefaultDB> 
+    abstract public class DefaultAbsDb: AbsDb 
     {
-        
-        public abstract int CountKeys();
     }
 }
