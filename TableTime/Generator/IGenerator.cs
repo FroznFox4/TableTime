@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TableTime.Day;
+﻿using TableTime.Day;
 using TableTime.Dish;
 using TableTime.Week;
 
 namespace TableTime.Generator
 {
-    public interface IGenerator<Dish, Day, Week>
+    public interface IGenerator<T, Dish, Day, Week> 
+        where Dish: IDish<T> 
+        where Day: IDay<T>
+        where Week: IWeek<T>
     {
         Dish GenerateDish();
         Day GenerateDay();

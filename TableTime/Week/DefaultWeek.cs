@@ -1,32 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TableTime.Day;
 
 namespace TableTime.Week
 {
     public class DefaultWeek : IWeek<double>
     {
-        public DefaultWeek() 
+        public DefaultWeek() { }
+        public DefaultWeek(Dictionary<string, IDay<double>> dayOfWeek)
         {
-            DayOfWeek = new MyDictionary<string, IDay<double>>();
+            DayOfWeek = dayOfWeek;
         }
-
-        private MyDictionary<string, IDay<double>> dayOfWeek;
-        public MyDictionary<string, IDay<double>> DayOfWeek
-        {
-            get
-            {
-                return dayOfWeek;
-            }
-            set
-            {
-                dayOfWeek = value;
-            }
-        }
+        public Dictionary<string, IDay<double>> DayOfWeek { get; set; } = new MyDictionary<string, IDay<double>>();
         public object Clone()
         {
             return this.MemberwiseClone();

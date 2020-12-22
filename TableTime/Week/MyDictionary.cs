@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TableTime.Week
 {
@@ -12,7 +9,7 @@ namespace TableTime.Week
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public class MyDictionary<TKey, TValue> : IDictionary<TKey, TValue>
+    public class MyDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IDictionary<TKey, TValue>
     {
         protected IDictionary<TKey, TValue> Dictionary;
         public MyDictionary()
@@ -41,7 +38,7 @@ namespace TableTime.Week
         }
         public virtual void Add(TKey key, TValue value)
         {
-            if(Dictionary.Count < 7)
+            if(Dictionary.Count < 8)
             {
                 Dictionary.Add(key, value);
             }
